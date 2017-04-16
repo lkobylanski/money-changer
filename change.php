@@ -18,19 +18,19 @@ public function displayData() //metoda wyswietli mozliwe kombinacje
 		}
 		else if(is_numeric($this->money) == true)
 		{
-			$counter = 0;
-			foreach($nomi as $value)
+			$counter = 0;//licznik ma wartość 0 i jest poza pętlą foreach aby się nie resetować do 0 dla każdego elemtu szeregu!
+			foreach($nomi as $value)//dla każdego el. szeregu zapisanego jako $value
 			{
-				if($this->money == $value)
+				if($this->money == $value)//jeżeli liczba wprowadzona przez użytkownika JEST rowna danemu elemntowi szeregu
 				{
-					$counter++;
+					$counter++;//dodaj jeden do $counter
 				}
 			}
-			if($counter == 0)
+			if($counter == 0)//jeżeli $counter == 0 tzn. że ŻADNA z liczb z szeregu NIE JEST == liczibie użytkownika czyli nie jest żadny z nominałów
 			{
-				echo "Wprowadz pieniadz: 200, 100, 50, 20, 10, 5, 2 zl";
+				echo "Wprowadź pieniądz: 200, 100, 50, 20, 10, 5, 2 zł";//walidacja któa szczegółowo mówi, jaki banknot lub monetę można wprowadzić
 			}
-			else
+			else//w innym wypadku NIŻ $counter == 0 czyli jeżeli liczba użytkownika jest == chociaż 1 z liczn z szwregu
 				{		
 				foreach($nomi as $value) //dla kazdego nominalu z przedzialu $nomi zapisanego jako $value
 				{
